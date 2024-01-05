@@ -1,9 +1,12 @@
 import './App.css';
+import {Button, Navbar, Stack} from "react-bootstrap";
+import MyNavBar from "./component/MyNavBar";
 
 function App() {
   return (
     <>
-      <h2>Okurut henry kedi</h2>
+      <MyNavBar></MyNavBar>
+
     </>
   );
 }
