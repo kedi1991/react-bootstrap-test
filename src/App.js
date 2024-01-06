@@ -1,12 +1,12 @@
 import './App.css';
-import {Button, Navbar, Stack} from "react-bootstrap";
 import MyNavBar from "./components/MyNavBar";
+import MyForm from "./components/MyForm";
 
 function App() {
   return (
     <>
       <MyNavBar></MyNavBar>
-
+        <MyForm></MyForm>
     </>
   );
 }
