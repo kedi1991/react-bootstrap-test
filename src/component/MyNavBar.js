@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import {Button, Card, Col, Container, Navbar, Row} from "react-bootstrap";
 
 const MyNavBar = () => {
-    const [state, setState] = useState(false);
+    const [state, setState] = useState(0);
+
+
+    //functions for the increment
+    let increment = () => {
+        setState(state+1)
+    }
+
     return (
         <Container>
             <Navbar className="bg-body-tertiary" bg="primary" data-bs-theme="dark">
@@ -19,14 +26,14 @@ const MyNavBar = () => {
             <><br/></>
             <Row>
                 <Col>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem' }} border={"primary"}>
                         <Card.Body>
-                            <Card.Title>Counter</Card.Title>
+                            <Card.Title>{state}</Card.Title>
                             <Card.Text>
                                 Number
                             </Card.Text>
-                            <Button variant="primary">Primary</Button>{' '}
-                            <Button variant="secondary">Secondary</Button>{' '}
+                            <Button onClick={increment} variant="primary">Increase</Button>{' '}
+                            <Button variant="secondary">Decrease</Button>{' '}
                         </Card.Body>
                     </Card>
                 </Col>
