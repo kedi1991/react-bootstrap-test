@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import {Button, Card, Col, Container, Navbar, Row} from "react-bootstrap";
 
 const MyNavBar = () => {
-    const [state, setState] = useState(0);
+    let [state, setState] = useState({
+        count:0
+    });
 
 
     //functions for the increment
     let increment = () => {
-        setState(state+1)
+        setState({
+            count: state.count +1
+        })
+    }
+
+    //function to decrease
+    let decrease = () => {
+        setState({
+            count: state.count -1
+        })
     }
 
     return (
@@ -28,12 +39,12 @@ const MyNavBar = () => {
                 <Col>
                     <Card style={{ width: '18rem' }} border={"primary"}>
                         <Card.Body>
-                            <Card.Title>{state}</Card.Title>
+                            <Card.Title>{state.count}</Card.Title>
                             <Card.Text>
                                 Number
                             </Card.Text>
                             <Button onClick={increment} variant="primary">Increase</Button>{' '}
-                            <Button variant="secondary">Decrease</Button>{' '}
+                            <Button onClick={decrease} variant="secondary">Decrease</Button>{' '}
                         </Card.Body>
                     </Card>
                 </Col>
